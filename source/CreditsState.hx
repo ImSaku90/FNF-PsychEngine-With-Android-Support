@@ -45,7 +45,7 @@ class CreditsState extends MusicBeatState
 		#end
 
 		persistentUpdate = true;
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menuCredits'));
 		add(bg);
 		bg.screenCenter();
 		
@@ -81,9 +81,9 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Psych Engine Android'],
-			['Saw (M.A. Jigsaw)',	'saw',				'Main Programmer of Psych Engine Android',					'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 	'F73838'],
-			[''],
+		        ['Plus Engine Team'],
+		        ['ImEdyTFW','edy','Main Programmer And Artist','https://twitter.com/ImEdyOG?t=yfrz3bR85JN2ekQNB_OLEg&s=09', 'CA18E6'],
+		        [''],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'C30085'],
@@ -163,9 +163,9 @@ class CreditsState extends MusicBeatState
 		intendedColor = bg.color;
 		changeSelection();
 
-		#if android
-		addVirtualPad(UP_DOWN, A_B);
-		#end
+                #if android
+                addVirtualPad(UP_DOWN, A_B);
+                #end
 
 		super.create();
 	}
@@ -213,7 +213,7 @@ class CreditsState extends MusicBeatState
 				}
 			}
 
-			if(controls.ACCEPT && (creditsStuff[curSelected][3] == null || creditsStuff[curSelected][3].length > 4)) {
+			if(controls.ACCEPT) {
 				CoolUtil.browserLoad(creditsStuff[curSelected][3]);
 			}
 			if (controls.BACK)
